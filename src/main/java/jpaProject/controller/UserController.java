@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import jpaProject.dto.UserDto;
 
-import jpaProject.model.UserModel;
 import jpaProject.service.UserService;
 
 @Controller
@@ -16,8 +16,8 @@ public class UserController {
 	
 	@RequestMapping(path="/user/profile", method={ RequestMethod.GET })
 	@ResponseBody
-	public UserModel getprofile(int userId) {
-		UserModel userModel = userService.getUserById(userId);
-		return userModel;
+	public UserDto getprofile(int userId) {
+		UserDto userDto = userService.getUserById(userId);
+		return userDto;
 	}
 }
